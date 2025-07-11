@@ -1,4 +1,7 @@
 """
+while browsing reddit came across this exam problem and seemed fun.
+this seems to be from the 'leaving certificate 2025, Computer science, section C- Higher level' test, page 7.
+
 problem:
 
 extend the program so that it determines and displays the longest sequence of consecutive result increases
@@ -47,7 +50,7 @@ def uwu(result):
     
 
     #calculate longest run
-    """will implement this"""
+    """will implement this later"""
 
     
 
