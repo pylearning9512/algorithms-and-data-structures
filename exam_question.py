@@ -43,6 +43,7 @@ def uwu(result):
     for i in results:
         if i<40:
             scores_under40+=1
+
         if i in range(50,79):
             score50to79+=1
         
@@ -50,19 +51,25 @@ def uwu(result):
     
 
     #calculate longest run
-    """will implement this later"""
+        if len(results) == 0:
+            longest = []
+        else:
+            current = [results[0]]  
+            longest = [results[0]]
+            
+            for i in range(1, len(results)):
+                if results[i] > results[i-1]:  
+                    current.append(results[i])
+                    
+                    if len(current) > len(longest):
+                        longest = current.copy()
+                else:
+                    current = [results[i]]  
 
-    
+        #print out the results in the same format as the test quesztion
+        explanation= print(f"the mean percentage mark is {mean}\n the grade for the average result is {grade} \n the lowest score is {lowest} \n the highest score is {highest} \n the number of scores below 40 is {scores_under40} \n the number of scores between 50 and 79 is {score50to79}\n the longest run of result incrases is {', '.join(map(str, longest))}")
 
 
-
-
-
-
-
-    explanation= print(f"the mean percentage mark is {mean}\n the grade for the average result is {grade} \n the lowest score is {lowest} \n the highest score is {highest} \n the number of scores below 40 is {scores_under40} \n the number of scores between 50 and 79 is {score50to79}\n the longest run of result incrases is {longest}")
-
-
-    return explanation
+        return explanation
 
 uwu(results)
